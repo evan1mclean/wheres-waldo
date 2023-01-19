@@ -1,0 +1,27 @@
+.header {
+  --emphasis: #bf3c38;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #202124;
+}
+
+.red-title {
+  color: var(--emphasis);
+}
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.link:hover {
+  color: var(--emphasis);
+}

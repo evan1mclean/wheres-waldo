@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.start-game {
+  border: 1px solid white;
+  border-radius: 12px;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem;
+  background-color: #38bbbf;
+}
+
+.introduction {
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.character-images-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.character-image img {
+  height: 10rem;
+}
+
+.character-image {
+  text-align: center;
+  width: 7rem;
+}
+
+.start-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.start-button {
+  --button-color: #bf3c38;
+  --border-size: 2px;
+  position: relative;
+  color: inherit;
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--button-color);
+}
+
+.start-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: var(--border-size) solid var(--button-color);
+  transition: top, left, right, bottom, 100ms ease-in-out;
+}
+
+.start-button:hover::before,
+.start-button:focus::before {
+  top: calc(var(--border-size) * -2);
+  left: calc(var(--border-size) * -2);
+  right: calc(var(--border-size) * -2);
+  bottom: calc(var(--border-size) * -2);
+}
