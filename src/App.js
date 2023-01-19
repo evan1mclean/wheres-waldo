@@ -8,12 +8,12 @@ import StartGame from "./components/StartGame";
 function App() {
   return (
     <div>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
-          <Route path="/" element={<StartGame />}/>
-          <Route path="/game" element={<Game />}/>
-          <Route path="/leaderboard" element={<Leaderboard />}/>
+          <Route path="/" element={<StartGame />} />
+          <Route path="/game" element={<Game />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
         </Routes>
       </BrowserRouter>
     </div>
