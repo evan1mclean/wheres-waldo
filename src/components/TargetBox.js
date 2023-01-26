@@ -3,8 +3,8 @@ export default function TargetBox(props) {
   const style = {
     zIndex: "0",
     backgroundColor: "rgba(0, 0, 0, 0.35)",
-    width: "2rem",
-    height: "2rem",
+    width: "3rem",
+    height: "3rem",
     borderRadius: "50%",
     border: "2px dashed white",
     position: "absolute",
