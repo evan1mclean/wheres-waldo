@@ -14,3 +14,9 @@ body {
   background-color: #2b2b2b;
   color: white;
 }
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

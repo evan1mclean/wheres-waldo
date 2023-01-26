@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Game from "./components/Game";
 import Header from "./components/Header";
 import Leaderboard from "./components/Leaderboard";
@@ -7,7 +6,7 @@ import StartGame from "./components/StartGame";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <Header />
         <Routes>
