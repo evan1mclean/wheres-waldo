@@ -1,14 +1,18 @@
 .header {
-  --emphasis: #bf3c38;
-  padding: 1rem 2rem;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--headerHeight);
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #202124;
+  background-color: var(--headerColor);
 }
 
 .red-title {
-  color: var(--emphasis);
+  color: var(--customRed);
 }
 
 .navigation {
@@ -23,5 +27,5 @@
 }
 
 .link:hover {
-  color: var(--emphasis);
+  color: var(--customRed);
 }
