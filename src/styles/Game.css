@@ -41,3 +41,7 @@
 .game-main img {
   width: 100%;
 }
+
+.game-main:hover {
+  cursor: crosshair;
+}

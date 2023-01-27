@@ -42,7 +42,6 @@ export default function Game() {
   function handleClick(e) {
     if (!isVisible) {
       const { x, y } = getClickPosition(e);
-      console.log(e)
       setPageX(e.pageX);
       setPageY(e.pageY);
       setIsVisible(true);
