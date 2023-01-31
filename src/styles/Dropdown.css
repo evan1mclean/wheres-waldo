@@ -1,0 +1,28 @@
+.dropdown {
+  position: "absolute";
+  top: 0px;
+  left: 0px;
+  background-color: var(--backgroundColor);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.dropdown button {
+  background-color: var(--backgroundColor);
+  color: white;
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown button:hover {
+  background-color: var(--headerColor);
+}
+
+.dropdown button:active {
+  background-color: var(--backgroundColor);
+}

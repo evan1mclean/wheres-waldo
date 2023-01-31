@@ -6,15 +6,39 @@ import gameImage from "../images/game-image.jpg";
 import "../styles/Game.css";
 import { useEffect, useState } from "react";
 import TargetBox from "./TargetBox";
+import Dropdown from "./Dropdown";
 
 export default function Game() {
   //state for the timer
   const [timer, setTimer] = useState(0);
-   //state for targeting box
-   const [isVisible, setIsVisible] = useState(false);
-   //state for target box size/coordinates
-   const [pageX, setPageX] = useState(0);
-   const [pageY, setPageY] = useState(0);
+  //state for targeting box
+  const [isVisible, setIsVisible] = useState(false);
+  //state for target box size/coordinates
+  const [pageX, setPageX] = useState(0);
+  const [pageY, setPageY] = useState(0);
+  //state for characters to find
+  const [characters, setCharacters] = useState([
+    {
+      name: "Gandalf",
+      id: 1,
+      found: false,
+    },
+    {
+      name: "Groot",
+      id: 2,
+      found: false,
+    },
+    {
+      name: "Iron Giant",
+      id: 3,
+      found: false,
+    },
+    {
+      name: "Waldo",
+      id: 4,
+      found: false,
+    },
+  ]);
 
   //function for formatting the time correctly
   function formatTime(time) {
@@ -37,7 +61,6 @@ export default function Game() {
     const y = Math.floor((100 * e.nativeEvent.offsetY) / e.target.offsetHeight);
     return { x, y };
   }
-
 
   function handleClick(e) {
     if (!isVisible) {
@@ -85,7 +108,8 @@ export default function Game() {
           alt="Universe 113 Where's Waldo Type Game"
           onClick={handleClick}
         />
-        <TargetBox isVisible={isVisible} x={pageX} y={pageY}/>
+        <TargetBox isVisible={isVisible} x={pageX} y={pageY} />
+        <Dropdown isVisible={isVisible} x={pageX} y={pageY} characters={characters} />
       </div>
     </div>
   );

@@ -21,8 +21,8 @@ export default function TargetBox({isVisible, x, y}) {
     left: "50%",
     transform: "translate(-50%, -50%)"
   }
-  const box = isVisible ? <div style={circleStyle}>
+  const targetBox = isVisible ? <div style={circleStyle}>
     <div style={redDotStyle}></div>
   </div> : false;
-  return box;
+  return targetBox;
 }
