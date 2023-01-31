@@ -31,11 +31,19 @@
 }
 
 .character h2 {
+  position: relative;;
   font-size: 1rem;
+  text-align: center;
 }
 
 .character img {
   width: 4rem;
+}
+
+.character .checkmark {
+  position: absolute;
+  right: -1.5rem;
+  color: #38BE3C;
 }
 
 .game-main img {
