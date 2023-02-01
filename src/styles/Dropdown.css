@@ -17,6 +17,13 @@
   font: inherit;
   border: none;
   cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dropdown button .checkmark {
+  margin-left: auto;
+  color: #38BE3C;
 }
 
 .dropdown button:hover {

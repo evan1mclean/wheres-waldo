@@ -1,4 +1,5 @@
 import "../styles/Dropdown.css";
+import { AiFillCheckCircle } from "react-icons/ai";
 
 export default function Dropdown(props) {
   const { characters, isVisible, x, y, handleSubmit } = props;
@@ -9,8 +10,8 @@ export default function Dropdown(props) {
   };
 
   const characterNames = characters.map((character) => {
-    if (character.found) return false;
-    return <button key={character.id} onClick={() => handleSubmit(character.name)}>{character.name}</button>;
+    const checkmark = character.found ? <span className="checkmark"><AiFillCheckCircle /></span> : false;
+    return <button key={character.id} onClick={() => handleSubmit(character.name)}>{character.name}{checkmark}</button>;
   });
 
   const dropDown = isVisible ? (

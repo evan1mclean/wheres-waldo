@@ -55,6 +55,9 @@ export default function Game() {
     },
   ]);
 
+  //state for if the game is over
+  const [gameOver, setGameOver] = useState(false)
+
   function getClickPosition(e) {
     const x = Math.floor((100 * e.nativeEvent.offsetX) / e.target.offsetWidth);
     const y = Math.floor((100 * e.nativeEvent.offsetY) / e.target.offsetHeight);
@@ -110,19 +113,28 @@ export default function Game() {
     setCharacters([...updatedCharacters]);
   }
 
+  //Function to check if all characters have been found
+  function isGameOver() {
+    const notFound = characters.filter(character => character.found === false);
+    if (notFound.length === 0) setGameOver(true);
+  }
+
   async function handleSubmit(characterName) {
     const data = await getCharacterData(characterName);
     const found = isCharacterFound(data, characterX, characterY);
     if (found) setCharacterToFound(characterName);
     setIsVisible(false);
+    isGameOver();
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTimer((prevTimer) => prevTimer + 1);
     }, 1000);
+    //if game is over stop the timer
+    if (gameOver) clearInterval(interval);
     return () => clearInterval(interval);
-  }, []);
+  }, [gameOver]);
 
  const sidebar = characters.map(character => {
   const checkmark = character.found ? <span className="checkmark"><AiFillCheckCircle /></span> : false;
