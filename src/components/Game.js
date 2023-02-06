@@ -11,10 +11,11 @@ import formatTime from "../helper/FormatTime";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../index";
 import { AiFillCheckCircle } from "react-icons/ai";
+import SubmitScore from "./SubmitScore";
 
 export default function Game() {
   //state for the timer
-  const [timer, setTimer] = useState(0);
+  const [time, setTime] = useState(0);
 
   //state for targeting box
   const [isVisible, setIsVisible] = useState(false);
@@ -129,7 +130,7 @@ export default function Game() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimer((prevTimer) => prevTimer + 1);
+      setTime((prevTime) => prevTime + 1);
     }, 1000);
     //if game is over stop the timer
     if (gameOver) clearInterval(interval);
@@ -146,10 +147,12 @@ export default function Game() {
   )
  })
 
+ const submit = gameOver ? <SubmitScore time={time}/> : false;
+
   return (
     <div className="game-container">
       <div className="sidebar">
-        <div className="timer">{formatTime(timer)}</div>
+        <div className="timer">{formatTime(time)}</div>
         {sidebar}
       </div>
 
@@ -168,6 +171,7 @@ export default function Game() {
           handleSubmit={handleSubmit}
         />
       </div>
+      {submit}
     </div>
   );
 }
