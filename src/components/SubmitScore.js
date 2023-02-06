@@ -15,8 +15,8 @@ export default function SubmitScore(props) {
   async function addDocument(username, time) {
     // Add a new document with a generated id.
     await addDoc(collection(db, "Leaderboard"), {
-      name: {username},
-      time: {time},
+      name: username,
+      time: time,
     });
   }
 
