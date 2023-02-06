@@ -47,7 +47,7 @@ export default function SubmitScore(props) {
               id="username"
               name="username"
               maxLength={20}
-              pattern="[a-z\d]*"
+              pattern="[a-zA-Z\d]*"
               required
               onChange={handleChange}
               title="Only numbers and letters are accepted. e.g. Username123"
