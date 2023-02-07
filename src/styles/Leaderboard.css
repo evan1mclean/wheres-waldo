@@ -1,0 +1,132 @@
+.leaderboard-container {
+  margin-top: var(--headerHeight);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.loading {
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.spinner-container {
+  max-width: 1.5rem;
+  animation: 2s linear infinite svg-animation;
+}
+
+@keyframes svg-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.circle {
+  fill: transparent;
+  stroke: var(--customRed);
+  stroke-width: 14;
+  stroke-dasharray: 283;
+  stroke-linecap: round;
+  transform-origin: 50% 50%;
+  animation: 1.4s ease-in-out infinite both circle-animation;
+}
+
+@keyframes circle-animation {
+  0%, 50% {
+    stroke-dashoffset: 280;
+    transform: rotate(0deg);
+  }
+
+  50%, 75% {
+    stroke-dashoffset: 75;
+    transform: rotate(90deg);
+  }
+
+  75%, 100% {
+    stroke-dashoffset: 280;
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.refresh-button {
+  --border-size: 2px;
+  position: relative;
+  color: inherit;
+  font: inherit;
+  font-size: 1rem;
+  padding: 5px 10px;
+  background-color: var(--customRed);
+  border: none;
+  cursor: pointer;
+}
+
+.refresh-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: var(--border-size) solid var(--customRed);
+  transition: top, left, right, bottom, 100ms ease-in-out;
+}
+
+.refresh-button:hover::before,
+.refresh-button:focus::before {
+  top: calc(var(--border-size) * -2);
+  left: calc(var(--border-size) * -2);
+  right: calc(var(--border-size) * -2);
+  bottom: calc(var(--border-size) * -2);
+}
+
+.leaderboard-table {
+  text-align: center;
+  width: 40rem;
+  align-self: center;
+  border-collapse: collapse;
+  border: 1px solid var(--headerColor);
+}
+
+.leaderboard-table caption {
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: left;
+  background-color: var(--headerColor);
+}
+
+.leaderboard-table th {
+  padding: 1rem;
+  background-color: var(--headerColor);
+}
+
+.leaderboard-table td {
+  padding: 1rem;
+}
+
+.leaderboard-table tr {
+  border-bottom: 1px solid var(--headerColor);
+}
+
+.leaderboard-table tr:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-table .table-name {
+  text-align: left;
+  width: 100%;
+}
