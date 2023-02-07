@@ -84,17 +84,22 @@ export default function Leaderboard() {
   ));
 
   //Renders the table is loading is done or there's no error fetching data
-  const table = isLoading || isError ? false : (
-    <table className="leaderboard-table">
-      <caption>Top 100 Leaderboard</caption>
-      <tr>
-        <th>Place</th>
-        <th className="table-name">Username</th>
-        <th>Time</th>
-      </tr>
-      {tableData}
-    </table>
-  );
+  const table =
+    isLoading || isError ? (
+      false
+    ) : (
+      <table className="leaderboard-table">
+        <caption>Top 100 Leaderboard</caption>
+        <thead>
+          <tr>
+            <th>Place</th>
+            <th className="table-name">Username</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>{tableData}</tbody>
+      </table>
+    );
 
   return (
     <div className="leaderboard-container">
