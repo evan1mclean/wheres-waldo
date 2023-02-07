@@ -1,6 +1,6 @@
 # Find Them All
 
-This application is my first full-stack app and was built to demonstrate my ability to work with a backend as a service. The goal of the project was to create an interactive game where players can find Iron Giant, Gandalf, Groot, and Waldo within a large image. The game is built using React, CSS, Browser Router, and Firebase/Firestore and is a fun and exciting way to test your skills and see how fast you can find all the characters.
+This application is my first full-stack app and was built to demonstrate my ability to work with a backend as a service. The goal of the project was to create an interactive game where players can find Iron Giant, Gandalf, Groot, and Waldo within a large image. The game utilizes Firebase/Firestore to store all character position data and the user's clicks are validated against this data. The leaderboard is also stored in the Firebase/Firestore database, allowing players to compare their scores with others and see how they rank. Built using React, CSS, and Browser Router, this fun and exciting game is a great way to test your skills and see how fast you can find all the characters.
 
 ## Features
 
